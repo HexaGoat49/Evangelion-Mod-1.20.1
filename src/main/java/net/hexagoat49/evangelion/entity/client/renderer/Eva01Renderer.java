@@ -24,7 +24,7 @@ public class Eva01Renderer extends GeoEntityRenderer<Eva01> {
 
     @Override
     public ResourceLocation getTextureLocation(Eva01 animatable) {
-        return new ResourceLocation(Evangelion.MOD_ID, "textures/entity/eva01.png");
+        return new ResourceLocation(Evangelion.MOD_ID, "textures/entity/eva_01.png");
     }
 
     @Override

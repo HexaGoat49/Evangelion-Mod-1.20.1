@@ -3,7 +3,9 @@ package net.hexagoat49.evangelion;
 import com.mojang.logging.LogUtils;
 import net.hexagoat49.evangelion.block.ModBlocks;
 import net.hexagoat49.evangelion.entity.ModEntities;
+import net.hexagoat49.evangelion.entity.client.renderer.Eva01Renderer;
 import net.hexagoat49.evangelion.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,6 +38,7 @@ public class Evangelion {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.EVA_01.get(), Eva01Renderer::new);
         }
     }
 }

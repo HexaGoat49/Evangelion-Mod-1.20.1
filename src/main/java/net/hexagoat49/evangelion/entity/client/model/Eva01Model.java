@@ -13,17 +13,17 @@ import software.bernie.geckolib.model.data.EntityModelData;
 public class Eva01Model extends GeoModel<Eva01> {
     @Override
     public ResourceLocation getModelResource(Eva01 animatable) {
-        return new ResourceLocation(Evangelion.MOD_ID, "geo/eva01.geo.json");
+        return new ResourceLocation(Evangelion.MOD_ID, "geo/eva_01.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(Eva01 animatable) {
-        return new ResourceLocation(Evangelion.MOD_ID, "textures/entity/eva01.png");
+        return new ResourceLocation(Evangelion.MOD_ID, "textures/entity/eva_01.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(Eva01 animatable) {
-        return new ResourceLocation(Evangelion.MOD_ID, "animations/eva01.animation.json");
+        return new ResourceLocation(Evangelion.MOD_ID, "animations/eva_01.animation.json");
     }
 
     @Override
