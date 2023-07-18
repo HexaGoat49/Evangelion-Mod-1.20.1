@@ -15,7 +15,7 @@ public class ModEntities {
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Evangelion.MOD_ID);
 
     public static final RegistryObject<EntityType<Eva01>> EVA_01 =
-            ENTITY_TYPES.register("eva_base",
+            ENTITY_TYPES.register("eva_01",
                     () -> EntityType.Builder.of(Eva01::new, MobCategory.MISC)
                             .sized(8f, 56.0f)
                             .build(new ResourceLocation(Evangelion.MOD_ID, "eva_01").toString()));

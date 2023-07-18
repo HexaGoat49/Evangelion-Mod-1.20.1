@@ -1,6 +1,8 @@
 package net.hexagoat49.evangelion.event;
 
 import net.hexagoat49.evangelion.Evangelion;
+import net.hexagoat49.evangelion.entity.ModEntities;
+import net.hexagoat49.evangelion.entity.custom.Eva01;
 import net.hexagoat49.evangelion.networking.ModMessages;
 import net.hexagoat49.evangelion.networking.packet.PlayerJumpC2SPacket;
 import net.minecraft.client.Minecraft;
@@ -24,6 +26,7 @@ public class ModEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+            event.put(ModEntities.EVA_01.get(), Eva01.setAttributes());
         }
     }
 }

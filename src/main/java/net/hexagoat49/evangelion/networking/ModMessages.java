@@ -1,8 +1,10 @@
 package net.hexagoat49.evangelion.networking;
 
 import net.hexagoat49.evangelion.Evangelion;
+import net.hexagoat49.evangelion.networking.packet.PlayerJumpC2SPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -23,6 +25,12 @@ public class ModMessages {
                 .serverAcceptedVersions(s -> true)
                 .simpleChannel();
         INSTANCE = net;
+
+        net.messageBuilder(PlayerJumpC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(PlayerJumpC2SPacket::new)
+                .encoder(PlayerJumpC2SPacket::toBytes)
+                .consumerMainThread(PlayerJumpC2SPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

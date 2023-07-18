@@ -19,7 +19,6 @@ public class PlayerJumpC2SPacket {
         context.enqueueWork(() -> {
             ServerPlayer player = context.getSender();
 
-            // Make the Eva jump
             if(player.getVehicle() instanceof Eva01) {
                 ((Eva01) player.getVehicle()).doJump();
             }
