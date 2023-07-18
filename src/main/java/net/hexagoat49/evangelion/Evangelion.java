@@ -5,6 +5,7 @@ import net.hexagoat49.evangelion.block.ModBlocks;
 import net.hexagoat49.evangelion.entity.ModEntities;
 import net.hexagoat49.evangelion.entity.client.renderer.Eva01Renderer;
 import net.hexagoat49.evangelion.item.ModItems;
+import net.hexagoat49.evangelion.networking.ModMessages;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,7 +33,9 @@ public class Evangelion {
         modEventBus.addListener(this::commonSetup);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) { }
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        ModMessages.register();
+    }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
