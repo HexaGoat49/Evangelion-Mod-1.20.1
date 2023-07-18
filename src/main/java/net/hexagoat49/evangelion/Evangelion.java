@@ -1,6 +1,9 @@
 package net.hexagoat49.evangelion;
 
 import com.mojang.logging.LogUtils;
+import net.hexagoat49.evangelion.block.ModBlocks;
+import net.hexagoat49.evangelion.entity.ModEntities;
+import net.hexagoat49.evangelion.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +21,10 @@ public class Evangelion {
 
     public Evangelion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
